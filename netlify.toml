@@ -1,0 +1,20 @@
+# Netlify production configuration — I Do Enterprise (Next.js 14 App Router)
+#
+# Deployment uses the official Netlify Next.js Runtime (@netlify/plugin-nextjs),
+# which natively understands the App Router, static/SSG pages, and routing.
+# Do NOT add SPA-style catch-all redirects (e.g. /* -> /index.html) — the
+# runtime generates all routing automatically and a manual catch-all would
+# break Next.js navigation.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Pin to an LTS Node fully supported by Next 14.2.5 (local is Node 24).
+  NODE_VERSION = "20"
+
+# Official Next.js runtime — Netlify auto-installs this plugin (it does not
+# need to be in package.json). Declared explicitly for deterministic builds.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
