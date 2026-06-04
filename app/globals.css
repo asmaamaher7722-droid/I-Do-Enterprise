@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-strong antialiased;
+    font-feature-settings: "liga" 1;
+  }
+
+  ::selection {
+    @apply bg-primary-100 text-primary-700;
+  }
+}
+
+@layer components {
+  /* Shared horizontal container */
+  .container-x {
+    @apply mx-auto w-full max-w-container px-6 md:px-8 lg:px-[120px];
+  }
+
+  /* Section vertical rhythm: 56 / 80 / 120 */
+  .section-y {
+    @apply py-14 md:py-20 lg:py-[120px];
+  }
+
+  /* Eyebrow pill */
+  .eyebrow {
+    @apply inline-flex items-center rounded-full bg-primary-100 px-4 py-1.5 text-[14px] font-semibold tracking-[0.02em] text-primary-600;
+  }
+
+  /* Hide scrollbar for the horizontal filter row */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

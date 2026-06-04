@@ -1,0 +1,17 @@
+/node_modules
+/.next
+/out
+/build
+.DS_Store
+*.pem
+npm-debug.log*
+.env*.local
+next-env.d.ts
+
+# local caches, editor/agent state, build info
+/.npm-cache
+/.claude
+*.tsbuildinfo
+
+# large design reference (46MB) — kept out of git to keep the repo lean
+Home-Desktop.png

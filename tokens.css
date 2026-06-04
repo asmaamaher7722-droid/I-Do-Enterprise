@@ -1,0 +1,137 @@
+/* ============================================================
+   I Do Enterprise — Design Tokens (CSS Custom Properties)
+   Source of truth: DESIGN_SYSTEM.md
+   Direction: RTL-first. Values sampled from the homepage reference.
+   ============================================================ */
+
+:root {
+  /* ---------- Brand / Primary ---------- */
+  --color-primary:        #1E50C8;
+  --color-primary-hover:  #1A45AD;
+  --color-accent-blue:    #2C7BE5;
+  --color-primary-50:     #EAF1FF;
+  --color-primary-100:    #DCE8FF;
+
+  /* ---------- Navy / Neutrals ---------- */
+  --color-navy-900:       #0C1A38;
+  --color-navy-800:       #14264C;
+  --color-heading:        #1A2A4A;
+  --color-text:           #3F4A60;
+  --color-text-muted:     #6B7588;
+  --color-text-subtle:    #94A3B8;
+  --color-border:         #E6EAF2;
+
+  /* ---------- Surfaces ---------- */
+  --bg-page:              #FFFFFF;
+  --bg-tint:              #F4F6FE;
+  --bg-card:              #FFFFFF;
+  --bg-hero-gradient:     linear-gradient(180deg, #6FA8E6 0%, #3E73CF 55%, #EAF2FC 100%);
+  --bg-blue-section:      linear-gradient(135deg, #3E78D8 0%, #2C5FBF 100%);
+  --bg-dark-section:      linear-gradient(160deg, #14264C 0%, #0C1A38 100%);
+
+  /* ---------- Status / Semantic ---------- */
+  --color-success:        #1FA45C;
+  --color-success-bg:     #E4F6EC;
+  --color-warning:        #B0822E;
+  --color-warning-bg:     #F7EEDD;
+  --color-danger:         #DC2F36;
+  --color-danger-bg:      #FBE7E8;
+  --color-info:           #1E50C8;
+  --color-info-bg:        #E6EDFB;
+
+  /* ---------- Category accent gradients (icon tiles) ---------- */
+  --grad-accounting:      linear-gradient(145deg, #8B6DF0, #6D4FE0);
+  --grad-realestate:      linear-gradient(145deg, #F5A24A, #ED8636);
+  --grad-assets:          linear-gradient(145deg, #3B82F6, #1E50C8);
+  --grad-maintenance:     linear-gradient(145deg, #8A93A6, #5C6477);
+  --grad-cleaning:        linear-gradient(145deg, #34C27E, #1FA45C);
+  --grad-medical:         linear-gradient(145deg, #F26D6D, #E04848);
+  --grad-government:      linear-gradient(145deg, #D9A441, #C08A2E);
+  --grad-universities:    linear-gradient(145deg, #9A7DFD, #7C5CFC);
+
+  /* ---------- Typography ---------- */
+  --font-arabic:  "Tajawal", "Cairo", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-latin:   "Inter", "IBM Plex Sans", system-ui, sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;
+  --fw-black:   800;
+
+  /* Desktop type scale */
+  --fs-display:  3.25rem;  /* 52px  H1 hero      */
+  --fs-h2:       2.5rem;   /* 40px  section head */
+  --fs-h3:       1.375rem; /* 22px  card title   */
+  --fs-lead:     1.125rem; /* 18px  subtitle     */
+  --fs-body:     1rem;     /* 16px               */
+  --fs-small:    0.875rem; /* 14px  caption      */
+  --fs-eyebrow:  0.875rem; /* 14px  badge        */
+  --fs-stat:     2.25rem;  /* 36px  stat number  */
+
+  --lh-heading: 1.4;
+  --lh-display: 1.35;
+  --lh-body:    1.8;
+  --lh-tight:   1.1;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-12:  48px;
+  --space-16:  64px;
+  --space-24:  96px;   /* section padding (min)      */
+  --space-30:  120px;  /* section padding (spacious) */
+
+  /* ---------- Layout ---------- */
+  --container-max:   1280px;
+  --container-gutter: 24px;
+  --grid-gap:        24px;
+
+  /* ---------- Radius ---------- */
+  --radius-pill:  999px;
+  --radius-icon:  16px;
+  --radius-card:  20px;
+  --radius-panel: 36px;
+
+  /* ---------- Elevation (soft, blue-tinted) ---------- */
+  --shadow-sm: 0 2px 8px rgba(30, 80, 200, 0.06);
+  --shadow-md: 0 8px 24px rgba(30, 80, 200, 0.10);
+  --shadow-lg: 0 18px 48px rgba(20, 40, 80, 0.14);
+  --glow-cta:  0 0 40px rgba(60, 120, 230, 0.45);
+
+  /* ---------- Motion ---------- */
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:    150ms;
+  --dur-base:    200ms;
+  --dur-slow:    250ms;
+}
+
+/* ---------- Mobile type scale overrides ---------- */
+@media (max-width: 768px) {
+  :root {
+    --fs-display: 2.125rem; /* 34px */
+    --fs-h2:      1.75rem;  /* 28px */
+    --fs-stat:    1.75rem;  /* 28px */
+    --space-24:   64px;
+    --space-30:   72px;
+    --container-gutter: 16px;
+  }
+}
+
+/* ---------- Document direction ---------- */
+html {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-arabic);
+  color: var(--color-text);
+}
+
+/* Latin runs stay LTR inside RTL */
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}
